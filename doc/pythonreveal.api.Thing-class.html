@@ -1,0 +1,1287 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pythonreveal.api.Thing</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pythonreveal-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="pythonreveal-module.html">Package&nbsp;pythonreveal</a> ::
+        <a href="pythonreveal.api-module.html">Module&nbsp;api</a> ::
+        Class&nbsp;Thing
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Thing</h1><p class="nomargin-top"><span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+<a href="pythonreveal.api.Tag-class.html">Tag</a> --+    
+      |    
+<a href="pythonreveal.api.Floater-class.html">Floater</a> --+
+          |
+<a href="pythonreveal.api.Tag-class.html">Tag</a> --+   |
+      |   |
+  <a href="pythonreveal.api.Shape-class.html">Shape</a> --+
+          |
+         <strong class="uidshort">Thing</strong>
+</pre>
+
+<hr />
+<p>Base class for all objects in a presentation: page, column, paragraph,
+  etc.</p>
+
+<hr />
+<div class="fields">      <p><strong>To Do:</strong>
+        is <a href="pythonreveal.api.Thing-class.html#Paragraphs" 
+    class="link">Paragraphs</a> used at all?
+      </p>
+</div><!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pythonreveal.api.Thing-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="div"></a><span class="summary-sig-name">div</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Add a generic <a href="pythonreveal.api.Thing-class.html" 
+      class="link">Thing</a> to children and return it.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.div">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pythonreveal.api.Thing-class.html#add" class="summary-sig-name">add</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">something</span>)</span><br />
+      Add a child object to the current object.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.add">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_presentation"></a><span class="summary-sig-name">get_presentation</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.get_presentation">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pythonreveal.api.Thing-class.html#dig" class="summary-sig-name">dig</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Recursively compile the html code for the object and all its 
+      children.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.dig">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pythonreveal.api.Thing-class.html#fr" class="summary-sig-name">fr</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">order</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Hide theh object initially.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.fr">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="vspace"></a><span class="summary-sig-name">vspace</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">h</span>=<span class="summary-sig-default">'1em'</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Add a Vspace.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.vspace">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addList"></a><span class="summary-sig-name">addList</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">ordered</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Create and add a new html list as a child.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addList">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ulist"></a><span class="summary-sig-name">ulist</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Add unordered list.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.ulist">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ul"></a><span class="summary-sig-name">ul</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Alias for <a href="pythonreveal.api.Thing-class.html#ulist" 
+      class="link">self.ulist</a></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.ul">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="olist"></a><span class="summary-sig-name">olist</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Add ordered list.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.olist">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ol"></a><span class="summary-sig-name">ol</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Alias for <a href="pythonreveal.api.Thing-class.html#olist" 
+      class="link">self.olist</a></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.ol">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pythonreveal.api.Thing-class.html#addParagraph" class="summary-sig-name">addParagraph</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">html</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Create and add a new paragraph object as a child.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addParagraph">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="par"></a><span class="summary-sig-name">par</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">html</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Alias for <a href="pythonreveal.api.Thing-class.html#addParagraph" 
+      class="link">addParagraph</a>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.par">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pythonreveal.api.Thing-class.html#addH1" class="summary-sig-name">addH1</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">html</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Create and add a new H1 object as a child.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addH1">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="h1"></a><span class="summary-sig-name">h1</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">html</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Alias for <a href="pythonreveal.api.Thing-class.html#addH1" 
+      class="link">addH1</a></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.h1">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pythonreveal.api.Thing-class.html#addH2" class="summary-sig-name">addH2</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">html</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Create and add a new H2 object as a child.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addH2">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="h2"></a><span class="summary-sig-name">h2</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">html</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Alias for <a href="pythonreveal.api.Thing-class.html#addH2" 
+      class="link">addH2</a></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.h2">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pythonreveal.api.Thing-class.html#addH3" class="summary-sig-name">addH3</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">html</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Create and add a new H3 object as a child.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addH3">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="h3"></a><span class="summary-sig-name">h3</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">html</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Alias for <a href="pythonreveal.api.Thing-class.html#addH3" 
+      class="link">addH3</a></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.h3">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pythonreveal.api.Thing-class.html#addH4" class="summary-sig-name">addH4</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">html</span>=<span class="summary-sig-default">''</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Create and add a new H4 object as a child.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addH4">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="h4"></a><span class="summary-sig-name">h4</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">html</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Alias for <a href="pythonreveal.api.Thing-class.html#addH4" 
+      class="link">addH4</a></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.h4">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pythonreveal.api.Thing-class.html#addImage" class="summary-sig-name">addImage</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">src</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Create and add a new Image object as a child.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addImage">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="im"></a><span class="summary-sig-name">im</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">src</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Alias for <a href="pythonreveal.api.Thing-class.html#addImage" 
+      class="link">addImage</a></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.im">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pythonreveal.api.Thing-class.html#addVideo" class="summary-sig-name">addVideo</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">src</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Create and add a new Video object as a child.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addVideo">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="video"></a><span class="summary-sig-name">video</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">src</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Alias for <a href="pythonreveal.api.Thing-class.html#addVideo" 
+      class="link">addVideo</a></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.video">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addLink"></a><span class="summary-sig-name">addLink</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">url</span>,
+        <span class="summary-sig-arg">text</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addLink">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="link"></a><span class="summary-sig-name">link</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">url</span>,
+        <span class="summary-sig-arg">text</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.link">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pythonreveal.api.Thing-class.html#addRow" class="summary-sig-name">addRow</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">tid</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Create and add a new <a href="pythonreveal.api.Row-class.html" 
+      class="link">Row</a> child object if <code class="link">tid</code> is
+      new, otherwise return the existing Row with id <code>tid</code>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addRow">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="i"></a><span class="summary-sig-name">i</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">tid</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Alias for <a href="pythonreveal.api.Thing-class.html#addRow" 
+      class="link">addRow</a></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.i">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="r"></a><span class="summary-sig-name">r</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">tid</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Alias for <a href="pythonreveal.api.Thing-class.html#addRow" 
+      class="link">addRow</a></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.r">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="pythonreveal.api.Thing-class.html#addColumn" class="summary-sig-name">addColumn</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">tid</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Create and add a new <a href="pythonreveal.api.Column-class.html" 
+      class="link">Column</a> child object if <code class="link">tid</code>
+      is new, otherwise return the existing Column with id 
+      <code>tid</code>.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addColumn">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="j"></a><span class="summary-sig-name">j</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">tid</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Alias for <a href="pythonreveal.api.Thing-class.html#addColumn" 
+      class="link">addColumn</a></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.j">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="c"></a><span class="summary-sig-name">c</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">tid</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Alias for <a href="pythonreveal.api.Thing-class.html#addColumn" 
+      class="link">addColumn</a></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.c">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="pythonreveal.api.Floater-class.html">Floater</a></code></b>:
+      <code><a href="pythonreveal.api.Floater-class.html#left">left</a></code>,
+      <code><a href="pythonreveal.api.Floater-class.html#right">right</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="pythonreveal.api.Tag-class.html">Tag</a></code></b>:
+      <code><a href="pythonreveal.api.Tag-class.html#add_attribute">add_attribute</a></code>,
+      <code><a href="pythonreveal.api.Tag-class.html#align">align</a></code>,
+      <code><a href="pythonreveal.api.Tag-class.html#background">background</a></code>,
+      <code><a href="pythonreveal.api.Tag-class.html#center">center</a></code>,
+      <code><a href="pythonreveal.api.Tag-class.html#cl">cl</a></code>,
+      <code><a href="pythonreveal.api.Tag-class.html#color">color</a></code>,
+      <code><a href="pythonreveal.api.Tag-class.html#css">css</a></code>,
+      <code><a href="pythonreveal.api.Tag-class.html#font">font</a></code>,
+      <code><a href="pythonreveal.api.Tag-class.html#fontsize">fontsize</a></code>,
+      <code><a href="pythonreveal.api.Tag-class.html#getCSS">getCSS</a></code>,
+      <code><a href="pythonreveal.api.Tag-class.html#getHTMLOptions">getHTMLOptions</a></code>,
+      <code><a href="pythonreveal.api.Tag-class.html#margin">margin</a></code>,
+      <code><a href="pythonreveal.api.Tag-class.html#padding">padding</a></code>,
+      <code><a href="pythonreveal.api.Tag-class.html#setDefaultClass">setDefaultClass</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="pythonreveal.api.Shape-class.html">Shape</a></code></b>:
+      <code><a href="pythonreveal.api.Shape-class.html#h">h</a></code>,
+      <code><a href="pythonreveal.api.Shape-class.html#height">height</a></code>,
+      <code><a href="pythonreveal.api.Shape-class.html#w">w</a></code>,
+      <code><a href="pythonreveal.api.Shape-class.html#width">width</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Columns"></a><span class="summary-name">Columns</span><br />
+      list of child columns.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Images"></a><span class="summary-name">Images</span><br />
+      list of child images.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Pages"></a><span class="summary-name">Pages</span><br />
+      list of child pages.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Paragraphs"></a><span class="summary-name">Paragraphs</span><br />
+      list of child paragraphs
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="Rows"></a><span class="summary-name">Rows</span><br />
+      list of child rows.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="children"></a><span class="summary-name">children</span><br />
+      list of child objects.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="parent"></a><span class="summary-name">parent</span><br />
+      the parent object.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="pythonreveal.api.Tag-class.html">Tag</a></code></b>:
+      <code><a href="pythonreveal.api.Tag-class.html#attributes">attributes</a></code>,
+      <code><a href="pythonreveal.api.Tag-class.html#html_template">html_template</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>dict_css</code></strong> - a dict of CSS properties.</li>
+        <li><strong class="pname"><code>classes</code></strong> - list of css classes.</li>
+        <li><strong class="pname"><code>tag</code></strong> - optional tage string.</li>
+        <li><strong class="pname"><code>background</code></strong> - CSS background property.</li>
+        <li><strong class="pname"><code>color</code></strong> - CSS font color.</li>
+        <li><strong class="pname"><code>align</code></strong> - CSS text-align property.</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="pythonreveal.api.Shape-class.html#__init__">Shape.__init__</a>
+    </dt>
+  </dl>
+<div class="fields">      <p><strong>See Also:</strong>
+        <a href="pythonreveal.api.Tag-class.html" class="link">Tag</a>, <a 
+        href="pythonreveal.api.Shape-class.html" class="link">Shape</a>, <a
+        href="pythonreveal.api.Floater-class.html" class="link">Floater</a>
+        for keyword arguments.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="add"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">add</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">something</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.add">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Add a child object to the current object. If the child is a Column, 
+  Row, Paragraph, Image or Page, add it to the specific corresponding list 
+  as well.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="dig"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">dig</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.dig">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Recursively compile the html code for the object and all its 
+  children.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>the html code for the object and all its decendants.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="fr"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">fr</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">order</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.fr">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Hide theh object initially. It will appear after the move-forward key 
+  stroke. Add the <code>fragment</code> class to the object</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>self.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="addParagraph"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">addParagraph</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">html</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addParagraph">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create and add a new paragraph object as a child.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>html</code></strong> - the html code to go inside the paragraph.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the newly created <a href="pythonreveal.api.Paragraph-class.html"
+          class="link">Paragraph</a> object.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="addH1"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">addH1</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">html</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addH1">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create and add a new H1 object as a child.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>html</code></strong> - the html code to go inside the H1.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the newly created <a href="pythonreveal.api.H1-class.html" 
+          class="link">H1</a> object.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="addH2"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">addH2</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">html</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addH2">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create and add a new H2 object as a child.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>html</code></strong> - the html code to go inside the H2.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the newly created <a href="pythonreveal.api.H2-class.html" 
+          class="link">H2</a> object.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="addH3"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">addH3</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">html</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addH3">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create and add a new H3 object as a child.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>html</code></strong> - the html code to go inside the H3.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the newly created <a href="pythonreveal.api.H3-class.html" 
+          class="link">H3</a> object.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="addH4"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">addH4</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">html</span>=<span class="sig-default">''</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addH4">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create and add a new H4 object as a child.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>html</code></strong> - the html code to go inside the H4.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the newly created <a href="pythonreveal.api.H4-class.html" 
+          class="link">H4</a> object.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="addImage"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">addImage</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">src</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addImage">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create and add a new Image object as a child.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>src</code></strong> - the <code>src</code> source of the image.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the newly created <a href="pythonreveal.api.Image-class.html" 
+          class="link">Image</a> object.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="addVideo"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">addVideo</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">src</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addVideo">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create and add a new Video object as a child.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>src</code></strong> - the <code>src</code> source of the Video.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the newly created <a href="pythonreveal.api.Video-class.html" 
+          class="link">Video</a> object.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="addRow"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">addRow</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">tid</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addRow">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create and add a new <a href="pythonreveal.api.Row-class.html" 
+  class="link">Row</a> child object if <code class="link">tid</code> is 
+  new, otherwise return the existing Row with id <code>tid</code>.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>tid</code></strong> - the integer id of the Row to retrieve or create.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the retrieved or newly created <a 
+          href="pythonreveal.api.Row-class.html" class="link">Row</a> 
+          object.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="addColumn"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">addColumn</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">tid</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="pythonreveal.api-pysrc.html#Thing.addColumn">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create and add a new <a href="pythonreveal.api.Column-class.html" 
+  class="link">Column</a> child object if <code class="link">tid</code> is 
+  new, otherwise return the existing Column with id <code>tid</code>.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>tid</code></strong> - the integer id of the column to retrieve or create.</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>the retrieved or newly created <a 
+          href="pythonreveal.api.Column-class.html" class="link">Column</a>
+          object.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="pythonreveal-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Apr  5 14:16:59 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

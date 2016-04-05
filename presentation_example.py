@@ -3,7 +3,7 @@ Created on Jun 29, 2015
 
 @author: navid
 '''
-from api import *
+from pythonreveal.api import *
 
 
 

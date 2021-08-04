@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Presentation</title>
+<meta name="description"
+	content="A framework for easily creating beautiful presentations using HTML">
+<meta name="author" content="Hakim El Hattab">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style"
+	content="black-translucent" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="./revealjs/css/reveal.css">
+<link rel="stylesheet" href="./revealjs/css/theme/default.css" id="theme">
+
+
+<!-- <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900'
+	rel='stylesheet' type='text/css'>
+ -->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="./revealjs/lib/css/zenburn.css">
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+	if (window.location.search.match(/print-pdf/gi)) {
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = './revealjs/css/print/pdf.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	}
+</script>
+
+
+<!-- MathJax script with url placeholder -->
+<script type="text/javascript" src="./revealjs/lib/MathJax/MathJax.js?config=TeX-AMS-MML_SVG"> 
+</script>
+
+
+<script>
+	MathJax.Hub.Config({
+		tex2jax : {
+			inlineMath : [ [ '$', '$' ], [ '\\(', '\\)' ] ],
+			processEscapes : true
+		},
+		jax : [ 'output/SVG' ],
+		TeX : {
+			equationNumbers : {
+				autoNumber : "AMS"
+			}
+		}
+	});
+</script>
+<!--[if lt IE 9]>
+		<script src="./revealjs/lib/js/html5shiv.js"></script>
+		<![endif]-->
+		
+<!-- This is where the api's theme's style will go -->	
+
+<style>
+.reveal{
+    font-family : Calibri;
+    font-weight : bold;
+    font-size : 46px;
+    letter-spacing : -0.02em;
+    text-transform : none;
+}
+
+.reveal h1{
+}
+
+.reveal h2{
+    font-size : 1.5em;
+    font-weight : bold;
+}
+
+.reveal h3{
+    font-size : 1em;
+}
+
+.reveal h4{
+    font-size : 1em;
+}
+
+.reveal p{
+    text-align : justify;
+    color : #eee;
+}
+
+.reveal a{
+}
+
+.reveal li{
+    font-size : 1em;
+}
+
+.reveal li li{
+    font-weight : normal;
+    font-size : 0.9em;
+    margin-left : 1em;
+}
+
+.reveal li ul{
+    font-weight : normal;
+    font-size : 0.9em;
+    margin-left : 1em;
+}
+
+.reveal ul li{
+    font-weight : normal;
+    font-size : 0.9em;
+    margin-left : 1em;
+    color : #9999FF;
+}
+
+.reveal ul ul{
+    font-weight : normal;
+    font-size : 0.9em;
+    margin-left : 1em;
+}
+
+.reveal ul, .reveal ol{
+    text-align : left;
+    display : block;
+}
+
+.reveal b{
+    color : #F5EE31;
+}
+
+.reveal em{
+}
+
+.reveal .column{
+    font-weight : bold;
+}
+
+.reveal .row{
+    margin-bottom : 10px;
+    font-weight : bold;
+    clear : left;
+    display : flex;
+    flex-flow : row nowrap;
+    align-items : flex-end;
+}
+
+.reveal .row.top{
+    align-items : flex-start;
+}
+
+.reveal .row.middle{
+    align-items : center;
+}
+
+.reveal .row.bottom{
+    align-items : flex-end;
+}
+
+.reveal .paragraph{
+    font-weight : bold;
+}
+
+.reveal .image{
+}
+
+.reveal .page{
+    top : 0%;
+    height : 100%;
+}
+
+.reveal .sectionpage{
+    height : 100%;
+}
+
+.reveal .frontpage{
+}
+
+.reveal h2.vspace{
+    margin : 0px;
+}
+
+.reveal sup{
+    font-size : 0.5em;
+    color : #eee;
+    margin : 0.3em;
+    font-weight : lighter;
+}
+
+.author{
+}
+
+.institution{
+}
+
+.reveal .textshadow-large{
+    text-shadow : 5px 5px 15px #111;
+}
+
+.reveal .textshadow-small{
+    text-shadow : 5px 5px 5px #111;
+}
+
+.reveal .textshadow-center{
+    text-shadow : 0px 0px 3px #111;
+}
+
+.reveal .h2yellow{
+    color : #FFD800;
+    margin : 0.5empx;
+    line-height : 0.8em;
+    font-weight :  bold;
+    font-size :  2em;
+    text-shadow :  5px 5px 5px #222;
+    font-family : Calibri;
+}
+
+.reveal .email{
+    font-family : Calibri;
+}
+
+.align-center > *{
+    margin-right : auto;
+    margin-left : auto;
+}
+
+.reveal .reference, .reveal li.reference{
+    font-family : Computer Modern Serif;
+    color : #333;
+    font-size : 0.7em;
+    line-height : 1.3;
+    letter-spacing : 0.00em;
+    font-weight : normal;
+}
+
+.reveal .present>.page-wrapper{
+    height : 95%;
+}
+
+.reveal h2,.reveal h3,.reveal h4{
+    margin : 0 0 0.5em 0;
+    font-family : Lato;
+    line-height : 1em;
+    letter-spacing : -0.01em;
+    text-transform : none;
+}
+
+.reveal h2,.reveal h3,.reveal h4,.reveal p{
+    width : 100%;
+}
+
+.reveal h4.author{
+    font-family : Lato;
+    color : #FFD800;
+    margin : 0.3em;
+}
+
+.reveal h4.institution{
+    font-family : Lato;
+    font-weight : 100;
+    color : #ddd;
+    margin-bottom : 0.5em;
+    font-size : 0.8em;
+}
+
+.reveal .image,.reveal .video{
+    box-shadow : 15px 15px 20px #222;;
+    border : solid thin #222;
+    border-radius : 10px;
+}
+
+.reveal h2.header{
+    color : #fff;
+    padding-bottom : 0.5em;
+    padding-top : 0.5em;
+    margin-bottom : 0.5em;
+}
+
+h2.title,h4.author,h2.header,.reveal h2,.reveal h3,.reveal h4{
+    text-shadow : 5px 5px 20px #222;
+}
+
+.reveal b,.reveal em{
+    text-shadow : 0px 0px 5px #111;
+}
+
+.reveal h2.vertical-center{
+    position : relative;
+    -webkit-transform : translateY(-80%);
+    -moz-transform : translateY(-50%);
+}
+
+.reveal .sectionpage h2{
+    font-size : 2em;
+    text-shadow : 5px 5px 15px #111;
+    font-weight : lighter;
+}
+
+.reveal p.paragraph{
+    font-family : Calibri;
+    font-weight : bold;
+    text-shadow : 0px 0px 10px #111;
+}
+
+.reveal li.reference, .reveal .reference{
+    color : #ddd;
+}
+
+.reveal img.white{
+    background : white;
+    padding : 0.5em;
+    border : solid 3px #333;
+    margin-right : 0.5em;
+    margin-left : 0.5em;
+}
+
+.reveal img.black{
+    background : black;
+    padding : 0.5em;
+    border : solid 3px #9999FF;
+    margin-right : 0.5em;
+    margin-left : 0.5em;
+}
+
+.reveal .MathJax_SVG{
+    color : #fff;
+}
+
+.reveal ol li{
+    color : #9999FF;
+}
+
+.reveal ol li span{
+    color : #ddd;
+}
+
+.reveal ul li span{
+    color : #ddd;
+}
+
+.reveal p.paragraph.normalweight{
+    font-weight : lighter;
+}
+
+
+</style>
+
+		
+	
+</head>
+
+<body class=""  style="font-size:100%; ">
+<div class="reveal">
+ <div class="slides">
+    <section class="frontpage"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" title"  style="margin-bottom:2em; margin-top:1em; ">
+        Presentation Title
+        </h2>
+        <h4 class="author author" >
+        Your Name<sup>1</sup>
+        </h4>
+        <div class="vspace"  style="height:1em; clear:both; ">
+        </div>
+        <h4 class="institution" >
+        <sup>1</sup>Your Institution
+        </h4>
+    </section>
+    <section class="sectionpage section-centered"  data-transition="zoom"  data-background-transition="slide"  data-background="#333" >
+        <div class="vspace"  style="height:50%; clear:both; ">
+        </div>
+        <h2 class="white vertical-center newsection"  style="color:#fff; ">
+        Introduction
+        </h2>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        First case
+        </h2>
+        <p class="paragraph" >
+        We have a very <b>dense</b> matrix. It is the "correct" matrix, but its density makesit hard to efficiently compute its network charachteristics such as its <b>community structure</b>.
+        </p>
+        <p class="paragraph" >
+        Example:
+        </p>
+        <ul class="list" >
+            <li class="listitem" ><span>
+            Large dense similarity matrix.
+                </span></li>
+            <li class="listitem" ><span>
+            Dimensionality reduction.
+                </span></li>
+            <li class="listitem" ><span>
+            Correlation matrix in <b>genetic</b> or <b>protein</b> interaction networks?
+                </span></li>
+        </ul>
+        <div class="vspace"  style="height:2em; clear:both; ">
+        </div>
+        <h2 class=" h2yellow fragment" >
+        We need to approximate the graph
+        </h2>
+    </section>
+</div>
+</div>
+</div><script src="./revealjs/lib/js/head.min.js"></script>
+	<script src="./revealjs/js/reveal.min.js"></script>
+
+	<script>
+		// Full list of configuration options available here:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			width : 1200,
+			height : 1024,
+			controls : true,
+			progress : true,
+			history : true,
+			center : true,
+			slideNumber:true,
+			autoSlide:false,
+			loop:false,
+			embedded:false,
+			margin:0.05,
+
+			theme : Reveal.getQueryHash().theme || 'default', // available themes are in /css/theme
+			transition : Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+			// Parallax scrolling
+			// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+			// parallaxBackgroundSize: '2100px 900px',
+
+			// Optional libraries used to extend on reveal.js
+			dependencies : [ {
+				src : './revealjs/lib/js/classList.js',
+				condition : function() {
+					return !document.body.classList;
+				}
+			}, {
+				src : './revealjs/plugin/markdown/marked.js',
+				condition : function() {
+					return !!document.querySelector('[data-markdown]');
+				}
+			}, {
+				src : './revealjs/plugin/markdown/markdown.js',
+				condition : function() {
+					return !!document.querySelector('[data-markdown]');
+				}
+			}, {
+				src : './revealjs/plugin/highlight/highlight.js',
+				async : true,
+				callback : function() {
+					hljs.initHighlightingOnLoad();
+				}
+			}, {
+				src : './revealjs/plugin/zoom-js/zoom.js',
+				async : true,
+				condition : function() {
+					return !!document.body.classList;
+				}
+			}, {
+				src : './revealjs/plugin/notes/notes.js',
+				async : true,
+				condition : function() {
+					return !!document.body.classList;
+				}
+			} ]
+		});
+	</script>
+
+</body>
+</html>
+

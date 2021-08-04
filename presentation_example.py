@@ -30,7 +30,7 @@ def get_section_intro(p):
         - Sparsification: aprroximation
         - Pruning: separation of noise from signal
     '''
-    p.pagesection('Simplifying Complex Networks')
+    p.sectionpage('Simplifying Complex Networks')
     
     page = p.page('No one likes hairball graphs')
     page.im('massachusetts-ocupations-attorney-hairball-dark-small.png').cl('black').w('70%')
@@ -47,7 +47,7 @@ def get_section_intro(p):
 
     
 def get_section_sparsification(p):
-    page = p.pagesection('First case')
+    page = p.sectionpage('First case')
     page = p.page('First case')
     page.par('We have a very <b>dense</b> matrix. It is the "correct" matrix, but its density makes\
     it hard to efficiently compute its network charachteristics such as its <b>community structure</b>.')
@@ -89,7 +89,7 @@ def get_section_sparsification(p):
 
     
 def get_section_pruning(p):
-    p.pagesection('Second case')
+    p.sectionpage('Second case')
     page = p.page('Second case')
     page.par('We have a network with a backbone of interest, thought to be obscured by lots\
     of noisy edges. ')
@@ -123,7 +123,7 @@ def get_section_pruning(p):
 
 
 def get_section_MLF(p): 
-    p.pagesection('Marginal Likelihood Filter')
+    p.sectionpage('Marginal Likelihood Filter')
     
     page = p.page('Statistical significance')
     page.par('We use the <b>Marginal Likelihood Filter</b>').center()
@@ -187,7 +187,7 @@ def get_section_example1(p):
     
 def get_section_example2(p):
 
-    p.pagesection('Another example')
+    p.sectionpage('Another example')
     
     page = p.page('US air traffic network')
     page.par('Pruned using weight thresholding').center()
@@ -201,7 +201,7 @@ def get_section_example2(p):
     
     
 def get_section_discussion(p):
-    p.pagesection('Discussion')
+    p.sectionpage('Discussion')
     
     page = p.page('Weight thresholding vs <b>MLF</b>')
     page.im('graph-measures-airports-alt.svg').w('80%').cl('white')
@@ -235,7 +235,7 @@ def get_section_discussion(p):
     page.par('So, the distribution used in <b>MLF</b> is the marginal distribution of a \
     maximum entropy ensemble.')
     
-    p.pagesection('If there is time...')
+    p.sectionpage('If there is time...')
     
     page = p.page('Global Likelihood Filter')
     page.par('We can use the maximum entropy ensemble to compute a measure of significance for\
@@ -252,7 +252,7 @@ def get_section_discussion(p):
     
 
 def get_section_conclusion(p):
-    p.pagesection('Conclusion')
+    p.sectionpage('Conclusion')
     
     page = p.page('In conclusion...')
     page.vspace('1em')

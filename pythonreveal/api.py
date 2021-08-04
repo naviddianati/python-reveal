@@ -31,7 +31,7 @@ dict_classes = {"Thing":"",
                 "Paragraph":"paragraph",
                 "Image":"image",
                 "Page":"page",
-                "PageSection":"pagesection",
+                "SectionPage":"sectionpage",
                 "FrontPage":"frontpage",
                 "H1":"",
                 "H2":"",
@@ -82,7 +82,7 @@ class ThemeBase():
         self.dict_css['.reveal .image'] = {}
         self.dict_css['.reveal .paragraph'] = {'font-weight':'bold'}
         self.dict_css['.reveal .page'] = {'top': '0%', 'height':'100%'}
-        self.dict_css['.reveal .pagesection'] = {'height':'100%'}
+        self.dict_css['.reveal .sectionpage'] = {'height':'100%'}
         self.dict_css['.reveal .frontpage'] = {}
         self.dict_css['.reveal h2.vspace'] = {'margin':'0px'}
         self.dict_css['.reveal sup'] = {'font-size':'0.5em', 'color':'#eee', 'margin':'0.3em', 'font-weight':'lighter'}
@@ -190,7 +190,7 @@ class Theme(ThemeBase):
                                               '-webkit-transform': r'translateY(-80%)',
                                               '-moz-transform': 'translateY(-50%)'})
 
-        self.css('.reveal .pagesection h2', {'font-size':'2em', "text-shadow": "5px 5px 15px #111"})
+        self.css('.reveal .sectionpage h2', {'font-size':'2em', "text-shadow": "5px 5px 15px #111"})
         self.css('.reveal p.paragraph', {'font-family':'Calibri', 'font-weight':'bold', "text-shadow": "0px 0px 10px #111"})
 
 
@@ -239,7 +239,7 @@ class ThemeDark(ThemeBase):
                                               '-webkit-transform': r'translateY(-80%)',
                                               '-moz-transform': 'translateY(-50%)'})
 
-        self.css('.reveal .pagesection h2', {'font-size':'2em', "text-shadow": "5px 5px 15px #111", 'font-weight':'lighter'})
+        self.css('.reveal .sectionpage h2', {'font-size':'2em', "text-shadow": "5px 5px 15px #111", 'font-weight':'lighter'})
         self.css('.reveal p.paragraph', {'font-family':'Calibri', 'font-weight':'bold', "text-shadow": "0px 0px 10px #111"})
         self.css('.reveal li.reference, .reveal .reference', {'color': '#ddd', })
         self.css('.reveal img.white', {"background":"white", 'padding':'0.5em', 'border': 'solid 3px #333',
@@ -1029,7 +1029,7 @@ class Page(Thing):
         return h
 
 
-class PageSection(Page):
+class SectionPage(Page):
     '''
     Class for transition pages. This page contains one
     vertically and horizontally centered text tag.
@@ -1268,14 +1268,14 @@ class Presentation(Thing):
         self.add(p)
         return p
 
-    def pagesection(self, text=''):
+    def sectionpage(self, text=''):
         '''
-        Create and add a new child L{PageSection} with
+        Create and add a new child L{SectionPage} with
         the given header text.
         @param text: the header text for the page.
         @return: the newly created page.
         '''
-        p = PageSection(text)
+        p = SectionPage(text)
         self.add(p)
         return p
 

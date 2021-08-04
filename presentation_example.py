@@ -1,13 +1,9 @@
 '''
 Created on Jun 29, 2015
 
-@author: navid
+@author: Navid Dianati
 '''
-from pythonreveal.api import *
-
-
-
-
+from pythonreveal import *
 
 
 def get_frontpage(p):
@@ -35,7 +31,6 @@ def get_section_intro(p):
         - Pruning: separation of noise from signal
     '''
     p.pagesection('Simplifying Complex Networks')
-
     
     page = p.page('No one likes hairball graphs')
     page.im('massachusetts-ocupations-attorney-hairball-dark-small.png').cl('black').w('70%')
@@ -49,6 +44,7 @@ def get_section_intro(p):
     page.vspace('2em')
     page.h2('Network contains too much noise!').cl('h2yellow')
     page.par('There is a meaningful core that is obscured by lots of noisy edges')
+
     
 def get_section_sparsification(p):
     page = p.pagesection('First case')
@@ -73,7 +69,7 @@ def get_section_sparsification(p):
     page.par('There are a number of relevant methods:')
     page.vspace('2em')
     l = page.ul()
-    i1=l.item('using <b>spanning trees</b>')
+    i1 = l.item('using <b>spanning trees</b>')
     u = i1.ul()
     u.item('Kelner, Jonathan A. and Madry, Aleksander, "Faster generation of random spanning \
     arXiv:0808.4134 [cs]  (2008). arXiv: 0808.4134').cl('reference')
@@ -84,12 +80,13 @@ def get_section_sparsification(p):
     trees", in Foundations of Computer Science, 2009. FOCS 09. 50th Annual IEEE Symposium \
     on (IEEE, 2009), pp. 13--21.').cl('reference')
     u.vspace('0.5em')
-    i3=l.item('using <b>expanders</b> in general')
+    i3 = l.item('using <b>expanders</b> in general')
     u = i3.ul()
     u.item('Goyal, Navin and Rademacher, Luis and Vempala, Santosh, "Expanders via random \
     spanning trees", in Proceedings of the twentieth Annual ACM-SIAM Symposium on Discrete \
     Algorithms (Society for Industrial and Applied Mathematics, 2009), pp. 576--585.').cl('reference')
     u.vspace('0.5em')
+
     
 def get_section_pruning(p):
     p.pagesection('Second case')
@@ -118,14 +115,14 @@ def get_section_pruning(p):
     page.im('occupations-sample.png').cl('white').w('100%')
     # p.page().im('MIT-crop.pdf.png').cl('white').h('80%')
     
-    
     page = p.page('Pruning a dense weighted graph')
     page.par('How to get rid of less significant edges in a graph?').center()
     page.par('How to extract the most significant subgraphs from a weighted  graph?').center()
     page.vspace('2em')
     page.h2("<b>Weight thresholding isn't good enough</b>").cl('h2yellow').fr()
 
-def get_section_MLF(p):    
+
+def get_section_MLF(p): 
     p.pagesection('Marginal Likelihood Filter')
     
     page = p.page('Statistical significance')
@@ -138,7 +135,6 @@ def get_section_MLF(p):
     div = page.div().fr()
     div.im('significance1.svg').cl('white').w('80%')
     div.par('which bond is more <b>significant</b>?').center()
-    
 
     page = p.page('Marginal Likelihood Filter (MLF)')
     page.par('Let $G$ be a graph with integer edge weights.')
@@ -151,7 +147,6 @@ def get_section_MLF(p):
         proportional to the <b>product</b> of their weighted degrees.')
     page.h3(r'$p=\frac{k_{i}k_{j}}{2T^{2}}, \,\,\, T=\frac{1}{2}\sum_{i}k_{i}$').center()
     page.h2('The Configuration Model*').center().fr()
-
     
     page = p.page('The filter')
     page.par('According to the null model').center()
@@ -170,9 +165,6 @@ def get_section_MLF(p):
     page.vspace('2em')
     page.par('compute using the <b>binomial test</b>.').center()
     page.par('e.g. in Python\'s <b>STATSMODELS</b> package').center()
-    
-
-
 
 
 def get_section_example1(p):
@@ -191,6 +183,7 @@ def get_section_example1(p):
     
     page = p.page('')
     page.im('MLF-newyork-occupation-truncated-100-pct-labels-adjusted-crop.svg').cl('white').h('90%')
+
     
 def get_section_example2(p):
 
@@ -221,7 +214,7 @@ def get_section_discussion(p):
     page.vspace('1em')
     
     div = page.div().fr()
-    div.par(r'<b>Alternatively,</b> what is the maximum entropy ensemble of graphs subject to the'+
+    div.par(r'<b>Alternatively,</b> what is the maximum entropy ensemble of graphs subject to the' + 
               r' constraints $\left\langle x_1\right\rangle=c_1$, $\left\langle x_2\right\rangle=c_2$, $\cdots$?')
     div.vspace('1em')
     div.par(r'$P(G)\sim e^{\theta_{1}x_{1}(G)+\theta_{2}x_{2}(G)+\cdots\theta_{m}x_{m}(G)}$').center().fontsize('1.5em') 
@@ -274,18 +267,16 @@ def get_section_conclusion(p):
     page.vspace('1em')
     page.par('<b>Question:</b> are these filters usefull in understanding biological networks\
     list genetic or protein interaction networks? ').fr()
-    
-    
-    
-    
-    
 
 
-
-
-p = Presentation(theme=ThemeDark(), width=1200, height=1024, margin='0.05', transition='fade', data_dir='./files/example/')
-
-
+p = Presentation(
+    theme=ThemeDark(),
+    width=1200,
+    height=1024,
+    margin='0.05',
+    transition='fade',
+    data_dir='./files/example/'
+    )
 
 get_frontpage(p)
 get_section_intro(p)
@@ -297,6 +288,5 @@ get_section_example2(p)
 get_section_discussion(p)
 get_section_conclusion(p)
 
-
-p.endpage(url_qr = 'QR-paper-pruning.png')
+p.endpage(url_qr='QR-paper-pruning.png')
 p.export('presentation-example.html')

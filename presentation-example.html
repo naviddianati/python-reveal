@@ -1,0 +1,1002 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Presentation</title>
+<meta name="description"
+	content="A framework for easily creating beautiful presentations using HTML">
+<meta name="author" content="Hakim El Hattab">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style"
+	content="black-translucent" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="./revealjs/css/reveal.css">
+<link rel="stylesheet" href="./revealjs/css/theme/default.css" id="theme">
+
+
+<!-- <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900'
+	rel='stylesheet' type='text/css'>
+ -->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="./revealjs/lib/css/zenburn.css">
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+	if (window.location.search.match(/print-pdf/gi)) {
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = './revealjs/css/print/pdf.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	}
+</script>
+
+
+<!-- MathJax script with url placeholder -->
+<script type="text/javascript" src="./revealjs/lib/MathJax/MathJax.js?config=TeX-AMS-MML_SVG"> 
+</script>
+
+
+<script>
+	MathJax.Hub.Config({
+		tex2jax : {
+			inlineMath : [ [ '$', '$' ], [ '\\(', '\\)' ] ],
+			processEscapes : true
+		},
+		jax : [ 'output/SVG' ],
+		TeX : {
+			equationNumbers : {
+				autoNumber : "AMS"
+			}
+		}
+	});
+</script>
+<!--[if lt IE 9]>
+		<script src="./revealjs/lib/js/html5shiv.js"></script>
+		<![endif]-->
+		
+<!-- This is where the api's theme's style will go -->	
+
+<style>
+.reveal{
+    font-family : Calibri;
+    font-weight : bold;
+    font-size : 46px;
+    letter-spacing : -0.02em;
+    text-transform : none;
+}
+
+.reveal h1{
+}
+
+.reveal h2{
+    font-size : 1.5em;
+    font-weight : bold;
+}
+
+.reveal h3{
+    font-size : 1em;
+}
+
+.reveal h4{
+    font-size : 1em;
+}
+
+.reveal p{
+    text-align : justify;
+    color : #eee;
+}
+
+.reveal a{
+}
+
+.reveal li{
+    font-size : 1em;
+}
+
+.reveal li li{
+    font-weight : normal;
+    font-size : 0.9em;
+    margin-left : 1em;
+}
+
+.reveal li ul{
+    font-weight : normal;
+    font-size : 0.9em;
+    margin-left : 1em;
+}
+
+.reveal ul li{
+    font-weight : normal;
+    font-size : 0.9em;
+    margin-left : 1em;
+    color : #9999FF;
+}
+
+.reveal ul ul{
+    font-weight : normal;
+    font-size : 0.9em;
+    margin-left : 1em;
+}
+
+.reveal ul, .reveal ol{
+    text-align : left;
+    display : block;
+}
+
+.reveal b{
+    color : #F5EE31;
+}
+
+.reveal em{
+}
+
+.reveal .column{
+    font-weight : bold;
+}
+
+.reveal .row{
+    margin-bottom : 10px;
+    font-weight : bold;
+    clear : left;
+    display : flex;
+    flex-flow : row nowrap;
+    align-items : flex-end;
+}
+
+.reveal .row.top{
+    align-items : flex-start;
+}
+
+.reveal .row.middle{
+    align-items : center;
+}
+
+.reveal .row.bottom{
+    align-items : flex-end;
+}
+
+.reveal .paragraph{
+    font-weight : bold;
+}
+
+.reveal .image{
+}
+
+.reveal .page{
+    top : 0%;
+    height : 100%;
+}
+
+.reveal .pagesection{
+    height : 100%;
+}
+
+.reveal .frontpage{
+}
+
+.reveal h2.vspace{
+    margin : 0px;
+}
+
+.reveal sup{
+    font-size : 0.5em;
+    color : #eee;
+    margin : 0.3em;
+    font-weight : lighter;
+}
+
+.author{
+}
+
+.institution{
+}
+
+.reveal .textshadow-large{
+    text-shadow : 5px 5px 15px #111;
+}
+
+.reveal .textshadow-small{
+    text-shadow : 5px 5px 5px #111;
+}
+
+.reveal .textshadow-center{
+    text-shadow : 0px 0px 3px #111;
+}
+
+.reveal .h2yellow{
+    color : #FFD800;
+    margin : 0.5empx;
+    line-height : 0.8em;
+    font-weight :  bold;
+    font-size :  2em;
+    text-shadow :  5px 5px 5px #222;
+    font-family : Calibri;
+}
+
+.reveal .email{
+    font-family : Calibri;
+}
+
+.align-center > *{
+    margin-right : auto;
+    margin-left : auto;
+}
+
+.reveal .reference, .reveal li.reference{
+    font-family : Computer Modern Serif;
+    color : #333;
+    font-size : 0.7em;
+    line-height : 1.3;
+    letter-spacing : 0.00em;
+    font-weight : normal;
+}
+
+.reveal .present>.page-wrapper{
+    height : 95%;
+}
+
+.reveal h2,.reveal h3,.reveal h4{
+    margin : 0 0 0.5em 0;
+    font-family : Lato;
+    line-height : 1em;
+    letter-spacing : -0.01em;
+    text-transform : none;
+}
+
+.reveal h2,.reveal h3,.reveal h4,.reveal p{
+    width : 100%;
+}
+
+.reveal h4.author{
+    font-family : Lato;
+    color : #FFD800;
+    margin : 0.3em;
+}
+
+.reveal h4.institution{
+    font-family : Lato;
+    font-weight : 100;
+    color : #ddd;
+    margin-bottom : 0.5em;
+    font-size : 0.8em;
+}
+
+.reveal .image,.reveal .video{
+    box-shadow : 15px 15px 20px #222;;
+    border : solid thin #222;
+    border-radius : 10px;
+}
+
+.reveal h2.header{
+    color : #fff;
+    padding-bottom : 0.5em;
+    padding-top : 0.5em;
+    margin-bottom : 0.5em;
+}
+
+h2.title,h4.author,h2.header,.reveal h2,.reveal h3,.reveal h4{
+    text-shadow : 5px 5px 20px #222;
+}
+
+.reveal b,.reveal em{
+    text-shadow : 0px 0px 5px #111;
+}
+
+.reveal h2.vertical-center{
+    position : relative;
+    -webkit-transform : translateY(-80%);
+    -moz-transform : translateY(-50%);
+}
+
+.reveal .pagesection h2{
+    font-size : 2em;
+    text-shadow : 5px 5px 15px #111;
+    font-weight : lighter;
+}
+
+.reveal p.paragraph{
+    font-family : Calibri;
+    font-weight : bold;
+    text-shadow : 0px 0px 10px #111;
+}
+
+.reveal li.reference, .reveal .reference{
+    color : #ddd;
+}
+
+.reveal img.white{
+    background : white;
+    padding : 0.5em;
+    border : solid 3px #333;
+    margin-right : 0.5em;
+    margin-left : 0.5em;
+}
+
+.reveal img.black{
+    background : black;
+    padding : 0.5em;
+    border : solid 3px #9999FF;
+    margin-right : 0.5em;
+    margin-left : 0.5em;
+}
+
+.reveal .MathJax_SVG{
+    color : #fff;
+}
+
+.reveal ol li{
+    color : #9999FF;
+}
+
+.reveal ol li span{
+    color : #ddd;
+}
+
+.reveal ul li span{
+    color : #ddd;
+}
+
+.reveal p.paragraph.normalweight{
+    font-weight : lighter;
+}
+
+
+</style>
+
+		
+	
+</head>
+
+<body class=""  style="font-size:100%; ">
+<div class="reveal">
+ <div class="slides">
+    <section class="frontpage"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" title"  style="margin-bottom:2em; margin-top:1em; ">
+        Pruning weighted complex networks
+        </h2>
+        <h4 class="author author" >
+        Navid Dianati<sup>2,1</sup>
+        </h4>
+        <div class="vspace"  style="height:1em; clear:both; ">
+        </div>
+        <h4 class="institution" >
+        <sup>1</sup>The LazerLab, Northeastern University
+        </h4>
+        <h4 class="institution" >
+        <sup>2</sup>IQSS Harvard University
+        </h4>
+    </section>
+    <section class="pagesection section-centered"  data-transition="zoom"  data-background-transition="slide"  data-background="#333" >
+        <div class="vspace"  style="height:50%; clear:both; ">
+        </div>
+        <h2 class="white vertical-center newsection"  style="color:#fff; ">
+        Simplifying Complex Networks
+        </h2>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        No one likes hairball graphs
+        </h2>
+        <img class="image black"  style="width:70%; " src="./files/example/massachusetts-ocupations-attorney-hairball-dark-small.png" >
+        
+        </img>
+        <p class="paragraph fragment"  style="text-align:center; ">
+        "Ridiculogram"
+        </p>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Two kinds of troublesome networks
+        </h2>
+        <div class="vspace"  style="height:2em; clear:both; ">
+        </div>
+        <h2 class=" h2yellow" >
+        Network is too dense!
+        </h2>
+        <p class="paragraph" >
+        We need to measure network characteristics, but our     network is too dense: high computational cost
+        </p>
+        <div class="vspace"  style="height:2em; clear:both; ">
+        </div>
+        <h2 class=" h2yellow" >
+        Network contains too much noise!
+        </h2>
+        <p class="paragraph" >
+        There is a meaningful core that is obscured by lots of noisy edges
+        </p>
+    </section>
+    <section class="pagesection section-centered"  data-transition="zoom"  data-background-transition="slide"  data-background="#333" >
+        <div class="vspace"  style="height:50%; clear:both; ">
+        </div>
+        <h2 class="white vertical-center newsection"  style="color:#fff; ">
+        First case
+        </h2>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        First case
+        </h2>
+        <p class="paragraph" >
+        We have a very <b>dense</b> matrix. It is the "correct" matrix, but its density makes    it hard to efficiently compute its network charachteristics such as its <b>community structure</b>.
+        </p>
+        <p class="paragraph" >
+        Example:
+        </p>
+        <ul class="list" >
+            <li class="listitem" ><span>
+            Large dense similarity matrix.
+                </span></li>
+            <li class="listitem" ><span>
+            Dimensionality reduction.
+                </span></li>
+            <li class="listitem" ><span>
+            Correlation matrix in <b>genetic</b> or <b>protein</b> interaction networks?
+                </span></li>
+        </ul>
+        <div class="vspace"  style="height:2em; clear:both; ">
+        </div>
+        <h2 class=" h2yellow fragment" >
+        We need to approximate the graph
+        </h2>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Dense similarity matrix
+        </h2>
+        <p class="paragraph"  style="text-align:center; ">
+        Find a sparse <b>approximation</b> of the original graph
+        </p>
+        <video class=" white"  style="width:80%; " src="./files/example/5-anim.mp4"  controls loop >        <source  type="video/mp4">
+        
+        </video>
+        <div class="vspace"  style="height:0.5em; clear:both; ">
+        </div>
+        <h2 class=" h2yellow fragment" >
+        Sparsification
+        </h2>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Sparsification
+        </h2>
+        <p class="paragraph" >
+        There are a number of relevant methods:
+        </p>
+        <div class="vspace"  style="height:2em; clear:both; ">
+        </div>
+        <ul class="list" >
+            <li class="listitem" ><span>
+            using <b>spanning trees</b>
+                <ul class="list" >
+                    <li class="listitem reference" ><span>
+                    Kelner, Jonathan A. and Madry, Aleksander, "Faster generation of random spanning     arXiv:0808.4134 [cs]  (2008). arXiv: 0808.4134
+                        </span></li>
+                    <div class="vspace"  style="height:0.5em; clear:both; ">
+                    </div>
+                </ul>
+                </span></li>
+            <li class="listitem" ><span>
+            using methods to preserve the <b>spectrum</b> of the Laplacian
+                <ul class="list" >
+                    <li class="listitem reference" ><span>
+                    Spielman, Daniel A. and Teng, Shang-Hua, "Spectral Sparsification of Graphs",    trees", in Foundations of Computer Science, 2009. FOCS 09. 50th Annual IEEE Symposium     on (IEEE, 2009), pp. 13--21.
+                        </span></li>
+                    <div class="vspace"  style="height:0.5em; clear:both; ">
+                    </div>
+                </ul>
+                </span></li>
+            <li class="listitem" ><span>
+            using <b>expanders</b> in general
+                <ul class="list" >
+                    <li class="listitem reference" ><span>
+                    Goyal, Navin and Rademacher, Luis and Vempala, Santosh, "Expanders via random     spanning trees", in Proceedings of the twentieth Annual ACM-SIAM Symposium on Discrete     Algorithms (Society for Industrial and Applied Mathematics, 2009), pp. 576--585.
+                        </span></li>
+                    <div class="vspace"  style="height:0.5em; clear:both; ">
+                    </div>
+                </ul>
+                </span></li>
+        </ul>
+    </section>
+    <section class="pagesection section-centered"  data-transition="zoom"  data-background-transition="slide"  data-background="#333" >
+        <div class="vspace"  style="height:50%; clear:both; ">
+        </div>
+        <h2 class="white vertical-center newsection"  style="color:#fff; ">
+        Second case
+        </h2>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Second case
+        </h2>
+        <p class="paragraph" >
+        We have a network with a backbone of interest, thought to be obscured by lots    of noisy edges. 
+        </p>
+        <p class="paragraph" >
+        The task is to throw away edges that are not <b>significant</b> and see what remains.
+        </p>
+        <p class="paragraph" >
+        Example:
+        </p>
+        <ul class="list" >
+            <li class="listitem" ><span>
+            Lexical networks: word co-occurrence networks
+                </span></li>
+            <li class="listitem" ><span>
+            Co-authorship networks
+                </span></li>
+        </ul>
+        <div class="column"  style="height:100%; float:left; width:50%; ">
+            <img class="image"  style="height:300px; " src="./files/example/lexical-network.jpg" >
+            
+            </img>
+        </div>
+        <div class="column"  style="height:100%; float:left; width:50%; ">
+            <img class="image"  style="height:300px; text-align:center; " src="./files/example/coauthorship.jpg" >
+            
+            </img>
+        </div>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Pruning
+        </h2>
+        <div class="vspace"  style="height:2em; clear:both; ">
+        </div>
+        <h2 class=" h2yellow" >
+        NOT an approximation problem
+        </h2>
+        <div class="vspace"  style="height:2em; clear:both; ">
+        </div>
+        <p class="paragraph"  style="text-align:center; ">
+        What graph property do we want to preserve as we remove edges?
+        </p>
+        <p class="paragraph fragment"  style="text-align:center; ">
+        Do we even want to do that?
+        </p>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <p class="paragraph"  style="text-align:center; ">
+        Consider a network where edges have <b>integer</b> weights counting the number of some <b>event</b>         relating the end nodes.
+        </p>
+        <img class="image white"  style="width:100%; " src="./files/example/occupations-sample.png" >
+        
+        </img>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Pruning a dense weighted graph
+        </h2>
+        <p class="paragraph"  style="text-align:center; ">
+        How to get rid of less significant edges in a graph?
+        </p>
+        <p class="paragraph"  style="text-align:center; ">
+        How to extract the most significant subgraphs from a weighted  graph?
+        </p>
+        <div class="vspace"  style="height:2em; clear:both; ">
+        </div>
+        <h2 class=" h2yellow fragment" >
+        <b>Weight thresholding isn't good enough</b>
+        </h2>
+    </section>
+    <section class="pagesection section-centered"  data-transition="zoom"  data-background-transition="slide"  data-background="#333" >
+        <div class="vspace"  style="height:50%; clear:both; ">
+        </div>
+        <h2 class="white vertical-center newsection"  style="color:#fff; ">
+        Marginal Likelihood Filter
+        </h2>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Statistical significance
+        </h2>
+        <p class="paragraph"  style="text-align:center; ">
+        We use the <b>Marginal Likelihood Filter</b>
+        </p>
+        <img class="image"  style="width:80%; " src="./files/example/unwindingthehairballgraph.png" >
+        
+        </img>
+        <p class="paragraph reference"  style="text-align:center; ">
+        To appear in Physical Review E.
+        </p>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Statistical significance
+        </h2>
+        <p class="paragraph"  style="text-align:center; ">
+        Not all edges are created (statistically) equal
+        </p>
+        <div class=" fragment" >
+            <img class="image white"  style="width:80%; " src="./files/example/significance1.svg" >
+            
+            </img>
+            <p class="paragraph"  style="text-align:center; ">
+            which bond is more <b>significant</b>?
+            </p>
+        </div>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Marginal Likelihood Filter (MLF)
+        </h2>
+        <p class="paragraph" >
+        Let $G$ be a graph with integer edge weights.
+        </p>
+        <p class="paragraph" >
+        <b>Null Model:</b> Given the weighted degrees of the nodes, if everything else         were random, what would the edge weights look like?
+        </p>
+        <ol class="list" >
+            <li class="listitem" ><span>
+            Take all the unit edges out of the graph, then "sprinkle" them back over the nodes!
+                </span></li>
+            <li class="listitem" ><span>
+            Let each unit edge choose two nodes, each with probability proportional to its degree.
+                </span></li>
+        </ol>
+        <p class="paragraph" >
+        <b>MLF: </b> two nodes would be connected with probability         proportional to the <b>product</b> of their weighted degrees.
+        </p>
+        <h3 class=""  style="text-align:center; ">
+        $p=\frac{k_{i}k_{j}}{2T^{2}}, \,\,\, T=\frac{1}{2}\sum_{i}k_{i}$
+        </h3>
+        <h2 class=" fragment"  style="text-align:center; ">
+        The Configuration Model*
+        </h2>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        The filter
+        </h2>
+        <p class="paragraph"  style="text-align:center; ">
+        According to the null model
+        </p>
+        <p class="paragraph"  style="text-align:center; ">
+        The weight of an edge follows a <b>binomial</b> distribution.
+        </p>
+        <p class="paragraph"  style="text-align:center; ">
+        $\Pr\left[\sigma_{ij}=m\,|\,k_{i},k_{j},T\right] = {T \choose m}p^{m}(1-p)^{T-m}$
+        </p>
+        <p class="paragraph" >
+        Given the null model, compute a p-value for each edge. Lower p-value         corresponds to higher significance.
+        </p>
+        <img class="image white"  style="height:30%; " src="./files/example/binomials.svg" >
+        
+        </img>
+        <img class="image white"  style="float:right; height:30%; " src="./files/example/hierarchy.svg" >
+        
+        </img>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Some details
+        </h2>
+        <h2 class=" h2yellow" >
+        The p-value
+        </h2>
+        <div class="vspace"  style="height:2em; clear:both; ">
+        </div>
+        <p class="paragraph"  style="text-align:center; font-size:1.5em; ">
+        $s_{ij}(w_{ij})=\sum_{m\geq w_{ij}}\Pr\left[\sigma_{ij}=m\,|\
+    \,k_{i},k_{j},T\right]$
+        </p>
+        <div class="vspace"  style="height:2em; clear:both; ">
+        </div>
+        <p class="paragraph"  style="text-align:center; ">
+        compute using the <b>binomial test</b>.
+        </p>
+        <p class="paragraph"  style="text-align:center; ">
+        e.g. in Python's <b>STATSMODELS</b> package
+        </p>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Example:
+        </h2>
+        <p class="paragraph" >
+        The full occupations co-occurrence graph of Massachusetts:
+        </p>
+        <img class="image black"  style="width:70%; " src="./files/example/massachusetts-ocupations-attorney-hairball-dark.png" >
+        
+        </img>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Pruned using weight thresholding
+        </h2>
+        <p class="paragraph"  style="font-size:0.7em; text-align:center; width:auto; margin:10px; ">
+        3% truncation
+        </p>
+        <img class="image white"  style="height:70%; " src="./files/example/weight-newyork-occupation-truncated-3-pct-labels-adjusted-crop.svg " >
+        
+        </img>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Pruned using <b>MLF</b>
+        </h2>
+        <p class="paragraph"  style="font-size:0.7em; text-align:center; width:auto; margin:10px; ">
+        Again, 3% truncation
+        </p>
+        <img class="image white"  style="height:70%; " src="./files/example/MLF-newyork-occupation-truncated-100-pct-labels-adjusted-crop.svg" >
+        
+        </img>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <img class="image white"  style="height:90%; " src="./files/example/MLF-newyork-occupation-truncated-100-pct-labels-adjusted-crop.svg" >
+        
+        </img>
+    </section>
+    <section class="pagesection section-centered"  data-transition="zoom"  data-background-transition="slide"  data-background="#333" >
+        <div class="vspace"  style="height:50%; clear:both; ">
+        </div>
+        <h2 class="white vertical-center newsection"  style="color:#fff; ">
+        Another example
+        </h2>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        US air traffic network
+        </h2>
+        <p class="paragraph"  style="text-align:center; ">
+        Pruned using weight thresholding
+        </p>
+        <p class="paragraph"  style="font-size:0.7em; text-align:center; width:auto; margin:10px; ">
+        15% truncation
+        </p>
+        <img class="image white"  style="height:60%; " src="./files/example/2012-passengers-new-plot-weight-filter-weight-15pct-separate.svg" >
+        
+        </img>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        US air traffic network
+        </h2>
+        <p class="paragraph"  style="text-align:center; ">
+        Pruned using <b>MLF</b>
+        </p>
+        <p class="paragraph"  style="font-size:0.7em; text-align:center; width:auto; margin:10px; ">
+        15% truncation
+        </p>
+        <img class="image white"  style="padding:0.2em; height:70%; " src="./files/example/2012-combined-map-15pct-MLF.svg" >
+        
+        </img>
+    </section>
+    <section class="pagesection section-centered"  data-transition="zoom"  data-background-transition="slide"  data-background="#333" >
+        <div class="vspace"  style="height:50%; clear:both; ">
+        </div>
+        <h2 class="white vertical-center newsection"  style="color:#fff; ">
+        Discussion
+        </h2>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Weight thresholding vs <b>MLF</b>
+        </h2>
+        <img class="image white"  style="width:80%; " src="./files/example/graph-measures-airports-alt.svg" >
+        
+        </img>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Maximum entropy formulation
+        </h2>
+        <p class="paragraph" >
+        <b>Question:</b> If the only reliable information we had about the the network    was the expectation value of property $x$, then what would be expect from a random ensemble of graphs to look like?
+        </p>
+        <div class="vspace"  style="height:1em; clear:both; ">
+        </div>
+        <h2 class=" h2yellow fragment" >
+        Maximum entropy ensemble
+        </h2>
+        <div class="vspace"  style="height:1em; clear:both; ">
+        </div>
+        <div class=" fragment" >
+            <p class="paragraph" >
+            <b>Alternatively,</b> what is the maximum entropy ensemble of graphs subject to the constraints $\left\langle x_1\right\rangle=c_1$, $\left\langle x_2\right\rangle=c_2$, $\cdots$?
+            </p>
+            <div class="vspace"  style="height:1em; clear:both; ">
+            </div>
+            <p class="paragraph"  style="text-align:center; font-size:1.5em; ">
+            $P(G)\sim e^{\theta_{1}x_{1}(G)+\theta_{2}x_{2}(G)+\cdots\theta_{m}x_{m}(G)}$
+            </p>
+        </div>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Maximum entropy formulation
+        </h2>
+        <p class="paragraph" >
+        Find the maximum entropy ensemble of graphs with the <b>degree sequence</b> equal to    that of the observed graph <b>on average</b>.
+        </p>
+        <p class="paragraph" >
+        \[P(G)=\frac{1}{Z}g\left[\left\{ \sigma_{ij}\right\} \right]\exp\left[-\sum_{i < j}(\theta_{i}+\theta_{j})\sigma_{ij}\right]\,\,\,\forall G\in\mathscr{G}\]
+        </p>
+        <p class="paragraph"  style="text-align:center; ">
+        Fit the parameters $\theta_i$ to the node degrees...
+        </p>
+        <p class="paragraph" >
+        \[P(G)=\frac{1}{Z}\frac{\left(\sum_{i < j}\sigma_{ij}\right)!}{\prod_{i < j}\sigma_{ij}!}\prod_{i < j}\left(\frac{k_{i}k_{j}}{2T^{2}}\right)^{\sigma_{ij}}\,\,\,\forall G\in\mathscr{G}\]
+        </p>
+        <div class="vspace"  style="height:1em; clear:both; ">
+        </div>
+        <h2 class=" h2yellow" >
+        Multinomial distribution
+        </h2>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Maximum entropy formulation
+        </h2>
+        <p class="paragraph" >
+        <b>Theorem:</b> When the joint probability distribution is multinomial,     the marginal probability distribution is binomial
+        </p>
+        <div class="vspace"  style="height:2em; clear:both; ">
+        </div>
+        <p class="paragraph" >
+        So, the distribution used in <b>MLF</b> is the marginal distribution of a     maximum entropy ensemble.
+        </p>
+    </section>
+    <section class="pagesection section-centered"  data-transition="zoom"  data-background-transition="slide"  data-background="#333" >
+        <div class="vspace"  style="height:50%; clear:both; ">
+        </div>
+        <h2 class="white vertical-center newsection"  style="color:#fff; ">
+        If there is time...
+        </h2>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        Global Likelihood Filter
+        </h2>
+        <p class="paragraph" >
+        We can use the maximum entropy ensemble to compute a measure of significance for    each possible <b>subraph</b> and pick the most significant one.
+        </p>
+        <div class="vspace"  style="height:1em; clear:both; ">
+        </div>
+        <h2 class=" h2yellow" >
+        GLF
+        </h2>
+        <div class="vspace"  style="height:1em; clear:both; ">
+        </div>
+        <div class="column"  style="height:100%; float:left; width:60%; ">
+            <ul class="list" >
+                <li class="listitem" ><span>
+                NP-hard?
+                    </span></li>
+                <li class="listitem" ><span>
+                Requires Monte-Carlo methods
+                    </span></li>
+                <li class="listitem" ><span>
+                Two-tailed test
+                    </span></li>
+                <li class="listitem" ><span>
+                Results similar to <b>MLF</b> for moderate truncations
+                    </span></li>
+            </ul>
+        </div>
+        <div class="column"  style="height:100%; float:left; width:40%; ">
+            <img class="image white"  style="height:30%; " src="./files/example/MLF_vs_GLF-crop.svg" >
+            
+            </img>
+        </div>
+    </section>
+    <section class="pagesection section-centered"  data-transition="zoom"  data-background-transition="slide"  data-background="#333" >
+        <div class="vspace"  style="height:50%; clear:both; ">
+        </div>
+        <h2 class="white vertical-center newsection"  style="color:#fff; ">
+        Conclusion
+        </h2>
+    </section>
+    <section class="page"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" header" >
+        In conclusion...
+        </h2>
+        <div class="vspace"  style="height:1em; clear:both; ">
+        </div>
+        <ul class="list" >
+            <li class="listitem" ><span>
+            We argued that <b>sparsification</b> and <b>pruning</b> are two different problems.
+                </span></li>
+            <li class="listitem" ><span>
+            We introduced a statistical filter for pruning integer weighted networks:     <b>marginal likelihood filter</b>
+                </span></li>
+            <li class="listitem" ><span>
+            <b>MLF</b> assumes that the most meaningful aggregate feature of the graph    is its degree sequence.
+                </span></li>
+            <li class="listitem" ><span>
+            MLF is fast: nearly linear in the number of edges.
+                </span></li>
+            <li class="listitem" ><span>
+            MLF is closely related to <b>maximum entropy</b> ensemble methods.
+                </span></li>
+        </ul>
+        <div class="vspace"  style="height:1em; clear:both; ">
+        </div>
+        <p class="paragraph fragment" >
+        <b>Question:</b> are these filters usefull in understanding biological networks    list genetic or protein interaction networks? 
+        </p>
+    </section>
+    <section class="endpage"  data-transition="linear"  data-background-transition="slide" >
+        <h2 class=" textshadow-large" >
+        Thank You!
+        </h2>
+        <h4 class="author author" >
+        Navid Dianati
+        </h4>
+        <img class="image"  style="width:30%; " src="./files/example/QR-paper-pruning.png" >
+        
+        </img>
+    </section>
+</div>
+</div>
+</div><script src="./revealjs/lib/js/head.min.js"></script>
+	<script src="./revealjs/js/reveal.min.js"></script>
+
+	<script>
+		// Full list of configuration options available here:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			width : 1200,
+			height : 1024,
+			controls : true,
+			progress : true,
+			history : true,
+			center : true,
+			slideNumber:true,
+			autoSlide:false,
+			loop:false,
+			embedded:false,
+			margin:0.05,
+
+			theme : Reveal.getQueryHash().theme || 'default', // available themes are in /css/theme
+			transition : Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+			// Parallax scrolling
+			// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+			// parallaxBackgroundSize: '2100px 900px',
+
+			// Optional libraries used to extend on reveal.js
+			dependencies : [ {
+				src : './revealjs/lib/js/classList.js',
+				condition : function() {
+					return !document.body.classList;
+				}
+			}, {
+				src : './revealjs/plugin/markdown/marked.js',
+				condition : function() {
+					return !!document.querySelector('[data-markdown]');
+				}
+			}, {
+				src : './revealjs/plugin/markdown/markdown.js',
+				condition : function() {
+					return !!document.querySelector('[data-markdown]');
+				}
+			}, {
+				src : './revealjs/plugin/highlight/highlight.js',
+				async : true,
+				callback : function() {
+					hljs.initHighlightingOnLoad();
+				}
+			}, {
+				src : './revealjs/plugin/zoom-js/zoom.js',
+				async : true,
+				condition : function() {
+					return !!document.body.classList;
+				}
+			}, {
+				src : './revealjs/plugin/notes/notes.js',
+				async : true,
+				condition : function() {
+					return !!document.body.classList;
+				}
+			} ]
+		});
+	</script>
+
+</body>
+</html>
+

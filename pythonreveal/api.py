@@ -7,12 +7,13 @@ Created on May 22, 2015
 '''
 
 from string import Template
+from functools import total_ordering
 import os
-
 
 this_dir, this_filename = os.path.split(__file__)
 filename_header = os.path.join(this_dir, "header.html")
 filename_footer = os.path.join(this_dir, "footer.html")
+reveal_url = "./revealjs"
 
 # Dictionary mapping descriptive keyword name to shorthand
 # actually used as function keywords.
@@ -41,33 +42,14 @@ dict_classes = {"Thing":"",
                 "Author":"author",
                 "Institution":"institution",
                 "EndPage":"endpage",
-                'List' : 'list',
+                'List': 'list',
                 'ListItem':'listitem',
                 'Link':'link'
                 }
 
 
+class ThemeBase():
 
-class Config():
-    '''
-    @deprecated: Use L{Theme} instances instead.
-    '''
-    def __init__(self):
-        self.defaults = {'data_transition': 'linear',
-                         'background_transition':'slide',
-                         'background_color':''}
-
-config = Config()
-
-
-class Theme():
-    '''
-    Class containing CSS options.
-    @ivar raw_css: string of raw css code prepended to the
-    compiled CSS.
-    @ivar dict_css: dict mapping CSS selector to a dict of
-    attribute, values.
-    '''
     def __init__(self):
 
         self.raw_css = ''
@@ -121,44 +103,10 @@ class Theme():
                                   'font-size': '0.7em', 'line-height': '1.3',
                                   'letter-spacing': '0.00em', 'font-weight': 'normal'})
 
-
         self.define()
-
+    
     def define(self):
-        '''
-        Override to personalize the theme.
-        '''
-
-        self.css('.reveal', {'font-family':'Calibri', 'font-weight':'bold', 'font-size':'46px', 'letter-spacing': '-0.02em'})
-        self.css(['.reveal h2', '.reveal h3', '.reveal h4'],
-                 {'margin':'0 0 1em 0', 'font-family':'Lato', 'line-height':'1em',
-                  'letter-spacing':'-0.01em', 'text-transform':'none'})
-
-        self.css(['.reveal h2', '.reveal h3', '.reveal h4', '.reveal p'], {'width':'100%'})
-        self.css('.reveal h2', {'font-size':'1.5em', 'font-weight':'bold'})
-        self.css('.reveal h3', {'font-size':'1em'})
-        self.css('.reveal h4', {'font-size':'1em'})
-        self.css('.reveal h4.author', {'font-family':'Lato', 'color':'#FFD800', 'margin':'0.3em'})
-        self.css('.reveal h4.institution', {'font-family':'Lato', 'font-weight':'100', 'color':'#ddd', 'margin-bottom':'0.5em'})
-        self.css('.reveal p', {'text-align':'justify', 'color':'#eee'})
-        self.css(['.reveal .image', '.reveal .video'], {"box-shadow" : "15px 15px 20px #222;", 'border':'solid thin #222'})
-
-        self.css('.reveal h2.header', {'color':'#FFD700',
-#                                        'border-bottom':'solid thin #ddd','border-top':'solid thin #ddd',
-                                       'padding-bottom':'0.5em', 'padding-top':'0.5em',
-                                       'margin-bottom':'0.5em'})
-
-        # Text shaddow
-        self.css(['h2.title', 'h4.author', 'h2.header'], {"text-shadow": "5px 5px 20px #222"})
-        self.css(['.reveal b', '.reveal em'], {"text-shadow": "0px 0px 10px #111"})
-        self.css('.reveal b', {'color':'#9999FF'})
-
-        self.css('.reveal h2.vertical-center', {'position': 'relative',
-                                              '-webkit-transform': r'translateY(-80%)',
-                                              '-moz-transform': 'translateY(-50%)'})
-
-        self.css('.reveal .pagesection h2', {'font-size':'2em', "text-shadow": "5px 5px 15px #111"})
-        self.css('.reveal p.paragraph', {'font-family':'Calibri', 'font-weight':'bold', "text-shadow": "0px 0px 10px #111"})
+        pass
 
     def css(self, selectors, rules):
         '''
@@ -178,23 +126,19 @@ class Theme():
             except:
                 self.dict_css[','.join(selectors)] = rules
 
-
-
-
-
     def export_css(self):
         '''
         Compile all CSS rules to string.
         '''
         s = self.raw_css
-        for selector, code in self.dict_css.iteritems():
-#             print selector,code
+        for selector, code in self.dict_css.items():
             s += "%s{\n" % selector
-            for key, value in code.iteritems():
+            for key, value in code.items():
                 if not key: continue
                 s += "    %s : %s;\n" % (key, value)
             s += "}\n\n"
         return s
+
     def export_style(self):
         '''
         surround the compiled CSS code with <style></style>
@@ -204,13 +148,54 @@ class Theme():
         return s
 
 
-class ThemeDark(Theme):
-    def __init__(self):
-        Theme.__init__(self)
-        pass
-        self.dict_css = {}
+class Theme(ThemeBase):
+    '''
+    Class containing CSS options.
+    @ivar raw_css: string of raw css code prepended to the
+    compiled CSS.
+    @ivar dict_css: dict mapping CSS selector to a dict of
+    attribute, values.
+    '''
 
-class ThemeDark(Theme):
+    def define(self):
+        '''
+        Override to personalize the theme.
+        '''
+
+        self.css('.reveal', {'font-family':'Calibri', 'font-weight':'bold', 'font-size':'46px', 'letter-spacing': '-0.02em'})
+        self.css(['.reveal h2', '.reveal h3', '.reveal h4'],
+                 {'margin':'0 0 1em 0', 'font-family':'Lato', 'line-height':'1em',
+                  'letter-spacing':'-0.01em', 'text-transform':'none'})
+
+        self.css(['.reveal h2', '.reveal h3', '.reveal h4', '.reveal p'], {'width':'100%'})
+        self.css('.reveal h2', {'font-size':'1.5em', 'font-weight':'bold'})
+        self.css('.reveal h3', {'font-size':'1em'})
+        self.css('.reveal h4', {'font-size':'1em'})
+        self.css('.reveal h4.author', {'font-family':'Lato', 'color':'#FFD800', 'margin':'0.3em'})
+        self.css('.reveal h4.institution', {'font-family':'Lato', 'font-weight':'100', 'color':'#ddd', 'margin-bottom':'0.5em'})
+        self.css('.reveal p', {'text-align':'justify', 'color':'#eee'})
+        self.css(['.reveal .image', '.reveal .video'], {"box-shadow": "15px 15px 20px #222;", 'border':'solid thin #222'})
+
+        self.css('.reveal h2.header', {'color':'#FFD700',
+#                                        'border-bottom':'solid thin #ddd','border-top':'solid thin #ddd',
+                                       'padding-bottom':'0.5em', 'padding-top':'0.5em',
+                                       'margin-bottom':'0.5em'})
+
+        # Text shaddow
+        self.css(['h2.title', 'h4.author', 'h2.header'], {"text-shadow": "5px 5px 20px #222"})
+        self.css(['.reveal b', '.reveal em'], {"text-shadow": "0px 0px 10px #111"})
+        self.css('.reveal b', {'color':'#9999FF'})
+
+        self.css('.reveal h2.vertical-center', {'position': 'relative',
+                                              '-webkit-transform': r'translateY(-80%)',
+                                              '-moz-transform': 'translateY(-50%)'})
+
+        self.css('.reveal .pagesection h2', {'font-size':'2em', "text-shadow": "5px 5px 15px #111"})
+        self.css('.reveal p.paragraph', {'font-family':'Calibri', 'font-weight':'bold', "text-shadow": "0px 0px 10px #111"})
+
+
+class ThemeDark(ThemeBase):
+
     def __init__(self):
         self.dict_css = {}
         Theme.__init__(self)
@@ -238,7 +223,7 @@ class ThemeDark(Theme):
         self.css('.reveal h4.institution', {'font-family':'Lato', 'font-weight':'100', 'color':'#ddd', 'margin-bottom':'0.5em', 'font-size':'0.8em'})
         self.css('.reveal p', {'text-align':'justify', 'color':'#eee'})
         self.css(['.reveal .image', '.reveal .video'],
-                  {"box-shadow" : "15px 15px 20px #222;", 'border':'solid thin #222',
+                  {"box-shadow": "15px 15px 20px #222;", 'border':'solid thin #222',
                    'border-radius': '10px'})
 
         self.css('.reveal h2.header', {'color': '#fff',  # 97FFA7', #FFD700',
@@ -249,10 +234,7 @@ class ThemeDark(Theme):
         # Text shaddow
         self.css(['h2.title', 'h4.author', 'h2.header', '.reveal h2', '.reveal h3', '.reveal h4'], {"text-shadow": "5px 5px 20px #222"})
         self.css(['.reveal b', '.reveal em'], {"text-shadow": "0px 0px 5px #111"})
-#         self.css(['.reveal b', '.reveal em'], {"text-shadow": "none"})
-#         self.css('.reveal b', {'color':'#9999FF'})
         self.css('.reveal b', {'color':'#F5EE31'})
-
         self.css('.reveal h2.vertical-center', {'position': 'relative',
                                               '-webkit-transform': r'translateY(-80%)',
                                               '-moz-transform': 'translateY(-50%)'})
@@ -279,10 +261,6 @@ class ThemeDark(Theme):
         self.css('.reveal p.paragraph.normalweight', {'font-weight':'lighter'})
 
 
-
-
-
-
 class Tag():
     '''
     Abstract class representing a generic HTML tag.
@@ -290,6 +268,7 @@ class Tag():
     @ivar attributes: set of html attribute tuples. Will be inserted
     into the opening tag as C{attribute="value"}.
     '''
+
     def __init__(self, **kwargs):
         '''
         @keyword dict_css: a dict of CSS properties.
@@ -330,7 +309,7 @@ class Tag():
         be set using a dict.
         '''
         if type(input) == dict:
-            for key, value in input.iteritems():
+            for key, value in input.items():
                 self.dict_css[key] = value
         elif type(input) == tuple:
             self.dict_css[input[0]] = input[1]
@@ -345,7 +324,7 @@ class Tag():
         '''
         s = self.raw_css
         if self.dict_css:
-            for key, value in self.dict_css.iteritems():
+            for key, value in self.dict_css.items():
                 s += "%s:%s; " % (key, value)
 
             output = ' style="%s"'
@@ -359,7 +338,6 @@ class Tag():
         '''
         self.attributes.add((attribute, value))
 
-
     def getHTMLOptions(self):
         '''
         Return a string containing the "class" tag options.
@@ -372,7 +350,6 @@ class Tag():
         s += self.getCSS()
         return s
 
-
     def color(self, color):
         '''
         Set the text color of the tag.
@@ -381,6 +358,7 @@ class Tag():
         '''
         if color: self.css({'color': color})
         return self
+
     def align(self, align):
         '''
         Set the text-align of the tag.
@@ -389,6 +367,7 @@ class Tag():
         '''
         if align: self.css({'text-align':align})
         return self
+
     def center(self):
         self.align('center')
         return self
@@ -452,19 +431,23 @@ class Tag():
         self.css({'padding':padding})
         return self
 
+
 class Floater(Tag):
     '''
     Abstract class with CSS floating properties and methods.
     '''
+
     def __init__(self, **kwargs):
         Tag.__init__(self, **kwargs)
         pass
+
     def left(self):
         '''
         Set CSS C{float} to C{left}
         '''
         self.css(('float', 'left'))
         return self
+
     def right(self):
         '''
         Set CSS C{float} to C{right}
@@ -473,12 +456,11 @@ class Floater(Tag):
         return self
 
 
-
-
 class Shape(Tag):
     '''
     Abstract class with geometric properties: width, height.
     '''
+
     def __init__(self, **kwargs):
         '''
         @keyword w: width.
@@ -500,6 +482,7 @@ class Shape(Tag):
         '''
         self.css(("width", width))
         return self
+
     def w(self, width):
         '''
         Alias for L{self.width}
@@ -514,15 +497,12 @@ class Shape(Tag):
         '''
         self.css(("height", height))
         return self
+
     def h(self, height):
         '''
         Alias for L{self.height}
         '''
         return self.height(height)
-
-
-
-
 
 
 class Thing(Floater, Shape):
@@ -538,6 +518,7 @@ class Thing(Floater, Shape):
     @ivar Images: list of child images.
     @ivar Pages: list of child pages.
     '''
+
     def __init__(self, **kwargs):
         '''
         @see: L{Tag}, L{Shape}, L{Floater} for keyword arguments.
@@ -558,7 +539,6 @@ class Thing(Floater, Shape):
 
         self.html_template = ["<div%s>", "", "</div>"]
 
-
     def div(self, **kwargs):
         '''
         Add a generic L{Thing} to children and return it.
@@ -566,7 +546,6 @@ class Thing(Floater, Shape):
         x = Thing(**kwargs)
         self.add(x)
         return x
-
 
     def add(self, something):
         '''
@@ -589,12 +568,10 @@ class Thing(Floater, Shape):
         self.children.append(something)
         something.parent = self
 
-
     def get_presentation(self):
         if isinstance(self, Presentation):
             return self
         else:
-#             print self
             return self.parent.get_presentation()
 
     def dig(self):
@@ -610,11 +587,8 @@ class Thing(Floater, Shape):
         try:
             result = [self.html_template[0] % self.getHTMLOptions()] + s + [self.html_template[2]]
         except:
-            print self.html_template[0]
-#             print s
             raise
         return result
-
 
     def fr(self, order=None):
         '''
@@ -643,27 +617,30 @@ class Thing(Floater, Shape):
         x = List(ordered, **kwargs)
         self.add(x)
         return x
+
     def ulist(self, **kwargs):
         '''
         Add unordered list.
         '''
         return self.addList(ordered=False, **kwargs)
+
     def ul(self, **kwargs):
         '''
         Alias for L{self.ulist}
         '''
         return self.ulist(**kwargs)
+
     def olist(self, **kwargs):
         '''
         Add ordered list.
         '''
         return self.addList(ordered=True, **kwargs)
+
     def ol(self, **kwargs):
         '''
         Alias for L{self.olist}
         '''
         return self.olist(**kwargs)
-
 
     def addParagraph(self, html='', **kwargs):
         '''
@@ -674,12 +651,12 @@ class Thing(Floater, Shape):
         x = Paragraph(html=html, **kwargs)
         self.add(x)
         return x
+
     def par(self, html, **kwargs):
         '''
         Alias for L{addParagraph}.
         '''
         return self.addParagraph(html=html, **kwargs)
-
 
     def addH1(self, html='', **kwargs):
         '''
@@ -690,12 +667,12 @@ class Thing(Floater, Shape):
         x = H1(html=html, **kwargs)
         self.add(x)
         return x
+
     def h1(self, html, **kwargs):
         '''
         Alias for L{addH1}
         '''
         return self.addH1(html=html, **kwargs)
-
 
     def addH2(self, html='', **kwargs):
         '''
@@ -706,12 +683,12 @@ class Thing(Floater, Shape):
         x = H2(html=html, **kwargs)
         self.add(x)
         return x
+
     def h2(self, html, **kwargs):
         '''
         Alias for L{addH2}
         '''
         return self.addH2(html=html, **kwargs)
-
 
     def addH3(self, html='', **kwargs):
         '''
@@ -722,12 +699,12 @@ class Thing(Floater, Shape):
         x = H3(html=html, **kwargs)
         self.add(x)
         return x
+
     def h3(self, html, **kwargs):
         '''
         Alias for L{addH3}
         '''
         return self.addH3(html=html, **kwargs)
-
 
     def addH4(self, html='', **kwargs):
         '''
@@ -738,6 +715,7 @@ class Thing(Floater, Shape):
         x = H4(html=html, **kwargs)
         self.add(x)
         return x
+
     def h4(self, html, **kwargs):
         '''
         Alias for L{addH4}
@@ -753,12 +731,12 @@ class Thing(Floater, Shape):
         x = Image(src=src, **kwargs)
         self.add(x)
         return x
+
     def im(self, src, **kwargs):
         '''
         Alias for L{addImage}
         '''
         return self.addImage(src, **kwargs)
-
 
     def addVideo(self, src, **kwargs):
         '''
@@ -769,6 +747,7 @@ class Thing(Floater, Shape):
         x = Video(src=src, **kwargs)
         self.add(x)
         return x
+
     def video(self, src, **kwargs):
         '''
         Alias for L{addVideo}
@@ -776,13 +755,12 @@ class Thing(Floater, Shape):
         return self.addVideo(src, **kwargs)
 
     def addLink(self, url, text, **kwargs):
-        x = Link(url,text, **kwargs)
+        x = Link(url, text, **kwargs)
         self.add(x)
         return x
-    def link(self,url, text, **kwargs):
-        return self.addLink(url,text, **kwargs)
 
-
+    def link(self, url, text, **kwargs):
+        return self.addLink(url, text, **kwargs)
 
     def addRow(self, tid, **kwargs):
         '''
@@ -798,18 +776,18 @@ class Thing(Floater, Shape):
             x = Row(**kwargs)
             self.add(x)
             return x
+
     def i(self, tid=0, **kwargs):
         '''
         Alias for L{addRow}
         '''
         return self.addRow(tid, **kwargs)
+
     def r(self, tid=0, **kwargs):
         '''
         Alias for L{addRow}
         '''
         return self.addRow(tid, **kwargs)
-
-
 
     def addColumn(self, tid, **kwargs):
         '''
@@ -825,11 +803,13 @@ class Thing(Floater, Shape):
             x = Column(**kwargs)
             self.add(x)
             return x
+
     def j(self, tid=0, **kwargs):
         '''
         Alias for L{addColumn}
         '''
         return self.addColumn(tid, **kwargs)
+
     def c(self, tid=0, **kwargs):
         '''
         Alias for L{addColumn}
@@ -837,9 +817,8 @@ class Thing(Floater, Shape):
         return self.addColumn(tid, **kwargs)
 
 
-
-
 class Link(Thing):
+
     def __init__(self, url='', text='', **kwargs):
         '''
         @param url: url code to go inside the tag.
@@ -847,9 +826,9 @@ class Link(Thing):
         Thing.__init__(self, **kwargs)
         self.html_template = ["<a %s href='{url}' target='_blank'>".format(url=url), "", "</a>"]
         self.text = text
+
     def dig(self):
         return [self.html_template[0] % self.getHTMLOptions(), self.text, self.html_template[2]]
-
 
 
 class Text(Thing):
@@ -857,19 +836,23 @@ class Text(Thing):
     Generic text tag. Can be subclassed to create
     C{h1}, C{h2}, C{p}, etc.
     '''
+
     def __init__(self, html, **kwargs):
         '''
         @param html: html code to go inside the tag.
         '''
         Thing.__init__(self, **kwargs)
         self.html = html
+
     def dig(self):
         return [self.html_template[0] % self.getHTMLOptions(), self.html, self.html_template[2]]
+
 
 class H1(Text):
     '''
     Class representing an html C{h1} tag.
     '''
+
     def __init__(self, html='', **kwargs):
         '''
         @param html: html code to go inside the tag.
@@ -877,10 +860,12 @@ class H1(Text):
         Text.__init__(self, html, **kwargs)
         self.html_template = ["<h1%s>", "", "</h1>"]
 
+
 class H2(Text):
     '''
     Class representing an html C{h1} tag.
     '''
+
     def __init__(self, html='', **kwargs):
         '''
         @param html: html code to go inside the tag.
@@ -888,10 +873,12 @@ class H2(Text):
         Text.__init__(self, html, **kwargs)
         self.html_template = ["<h2%s>", "", "</h2>"]
 
+
 class H3(Text):
     '''
     Class representing an html C{h1} tag.
     '''
+
     def __init__(self, html='', **kwargs):
         '''
         @param html: html code to go inside the tag.
@@ -899,10 +886,12 @@ class H3(Text):
         Text.__init__(self, html, **kwargs)
         self.html_template = ["<h3%s>", "", "</h3>"]
 
+
 class H4(Text):
     '''
     Class representing an html C{h1} tag.
     '''
+
     def __init__(self, html='', **kwargs):
         '''
         @param html: html code to go inside the tag.
@@ -910,10 +899,12 @@ class H4(Text):
         Text.__init__(self, html, **kwargs)
         self.html_template = ["<h4%s>", "", "</h4>"]
 
+
 class Paragraph(Text):
     '''
     Class representing an html C{h1} tag.
     '''
+
     def __init__(self, html='', **kwargs):
         '''
         @param html: html code to go inside the tag.
@@ -922,13 +913,13 @@ class Paragraph(Text):
         self.html_template = ["<p%s>", "", "</p>"]
 
 
-
 class Image(Thing):
     '''
     Class representing an html C{img} tag. If this instance is bound to
     a L{Presentation} instance and the presentation's C{data_dir} is set,
     then the C{src} parameter is prepended by that url.
     '''
+
     def __init__(self, src='', **kwargs):
         '''
         @param src: src url of the image.
@@ -944,7 +935,6 @@ class Image(Thing):
         s = Thing.getHTMLOptions(self)
         # Prepend by the presentation's data_dir if set.
         presentation = self.get_presentation()
-#         print presentation
         src = self.src
         if src[0] in ['.', '/'] or src[:4] == 'http' or src[:3] == 'www':
             pass
@@ -955,10 +945,12 @@ class Image(Thing):
             s += ' src="%s" ' % src
         return s
 
+
 class Video(Thing):
     '''
     Class representing an html C{video} tag.
     '''
+
     def __init__(self, src='', **kwargs):
         '''
         @param src: src url of the image.
@@ -974,6 +966,7 @@ class Video(Thing):
         self.html_template = ['<video%s controls {loop} {autoplay}>\
         <source  type="video/mp4">'.format(loop=loop, autoplay=autoplay), "</video>"]
         self.src = src
+
     def dig(self):
         return [self.html_template[0] % self.getHTMLOptions(), '', self.html_template[1]]
 
@@ -997,11 +990,11 @@ class Video(Thing):
         return s
 
 
-
 class Page(Thing):
     '''
     Class representing a page in the presentation.
     '''
+
     def __init__(self, header='', **kwargs):
         '''
         @keyword data_transition: the reveal C{data_transition} attribute.
@@ -1009,9 +1002,9 @@ class Page(Thing):
         @keyword background_transition: the reveal C{data-background-transition} attribute.
         '''
         Thing.__init__(self, **kwargs)
-        self.transition = kwargs.get(dict_kwrds['data_transition'], config.defaults['data_transition'])
-        self.background = kwargs.get(dict_kwrds['background_color'], config.defaults['background_color'])
-        self.background_transition = kwargs.get(dict_kwrds['background_transition'], config.defaults['background_transition'])
+        self.transition = kwargs.get(dict_kwrds['data_transition'], 'linear')
+        self.background = kwargs.get(dict_kwrds['background_color'], '')
+        self.background_transition = kwargs.get(dict_kwrds['background_transition'], 'slide')
         self.header(header)
         self.html_template = ["<section%s>", "", "</section>"]
 
@@ -1024,6 +1017,7 @@ class Page(Thing):
         if self.background:
             s += ' data-background="%s" ' % self.background
         return s
+
     def header(self, text=''):
         '''
         Set the header of the page.
@@ -1040,6 +1034,7 @@ class PageSection(Page):
     Class for transition pages. This page contains one
     vertically and horizontally centered text tag.
     '''
+
     def __init__(self, html, **kwargs):
         '''
         @param html: the html code to go into the centered text tag.
@@ -1057,12 +1052,14 @@ class List(Thing):
     '''
     Class for an html list C{ul} tag.
     '''
+
     def __init__(self, ordered=False, **kwargs):
         Thing.__init__(self)
         if ordered:
             self.html_template = ["<ol%s>", "", "</ol>"]
         else:
             self.html_template = ["<ul%s>", "", "</ul>"]
+
     def item(self, text):
         '''
         Create and add a list item child object with the
@@ -1073,10 +1070,12 @@ class List(Thing):
         self.add(l)
         return l
 
+
 class ListItem(Thing):
     '''
     Class for an html list item C{li} tag.
     '''
+
     def __init__(self, html='', **kwargs):
         '''
         @param html: html code to go inside the C{li} tag.
@@ -1084,6 +1083,7 @@ class ListItem(Thing):
         Thing.__init__(self)
         self.html = html
         self.html_template = ["<li%s><span>", "", "    </span></li>"]
+
     def dig(self):
         s = []
         for c in self.children:
@@ -1091,7 +1091,9 @@ class ListItem(Thing):
         result = [self.html_template[0] % self.getHTMLOptions()] + [self.html] + s + [self.html_template[2]]
         return result
 
+
 class Header(Thing):
+
     def __init__(self, **kwargs):
         Thing.__init__(self)
         self.html_template = ["<h1%s>", "", "</h1>"]
@@ -1101,9 +1103,11 @@ class Row(Thing):
     '''
     Class for a row in the page.
     '''
+
     def __init__(self, **kwargs):
         Thing.__init__(self, **kwargs)
         self.html_template = ["<div%s>", "", "</div>"]
+
     def top(self):
         '''
         Make the contents top-aligned
@@ -1125,15 +1129,16 @@ class Row(Thing):
         self.cl('bottom')
         return self
 
+
 class Column(Thing):
     '''
     Class for a column object in the page.
     '''
+
     def __init__(self, **kwargs):
         Thing.__init__(self, h="100%", css={"display":"block", "text-align":"left"})
         self.left()
         self.html_template = ["<div%s>", "", "</div>"]
-
 
 
 class Presentation(Thing):
@@ -1148,6 +1153,7 @@ class Presentation(Thing):
     header takes one parameter: the inline CSS style tag.
     footer takes 3 template parameters: width(int), height(int), theme(str)
     '''
+
     def __init__(self, **kwargs):
         '''
         @keyword theme_reveal: the reveal theme to use.
@@ -1178,7 +1184,7 @@ class Presentation(Thing):
 
         # MathJax
         self.mathjax_url_remote = 'http://cdn.mathjax.org/mathjax/latest/MathJax.js'
-        self.mathjax_url_local = './lib/MathJax/MathJax.js'
+        self.mathjax_url_local = os.path.join(reveal_url, 'lib/MathJax/MathJax.js')
         self.config_mathjax()
 
         self.css({"font-size":str(int(self.scale * 100)) + "%"})
@@ -1186,28 +1192,32 @@ class Presentation(Thing):
         with open(filename_header) as f:
             self.template_header = Template(f.read())
             self.inline_style = self.theme.export_style() if self.theme else ""
-            self.header = self.template_header.substitute(inlinestyle=self.inline_style,
-                                                          mathjax_src=self.mathjax_src)
+            self.header = self.template_header.substitute(INLINE_STYLE=self.inline_style,
+                                                          MATHJAX_SRC=self.mathjax_src,
+                                                          REVEAL_URL=reveal_url)
         with open(filename_footer) as f:
             self.template_footer = Template(f.read())
-            self.footer = self.template_footer.substitute(width=self.width,
-                                                          height=self.height,
-                                                          progress=self.progress,
-                                                          controls=self.controls,
-                                                          loop=self.loop,
-                                                          embedded=self.embedded,
-                                                          autoSlide=self.autoSlide,
-                                                          slideNumber=self.slideNumber,
-                                                          history=self.history,
-                                                          center=self.center,
-                                                          themeReveal=self.theme_reveal,
-                                                          margin=self.margin,
-                                                          transition=self.transition
+            self.footer = self.template_footer.substitute(
+                REVEAL_URL=reveal_url,
+                width=self.width,
+                height=self.height,
+                progress=self.progress,
+                controls=self.controls,
+                loop=self.loop,
+                embedded=self.embedded,
+                autoSlide=self.autoSlide,
+                slideNumber=self.slideNumber,
+                history=self.history,
+                center=self.center,
+                themeReveal=self.theme_reveal,
+                margin=self.margin,
+                transition=self.transition
+                )
 
-                                                                          )
         self.html_template = ['<body%s>\n<div class="reveal">\n <div class="slides">',
                               "",
                               "</div>\n</div>\n</div>" + self.footer]
+
     def config_mathjax(self, **kwargs):
         '''
         Set the MathJax library url depending on whether
@@ -1219,14 +1229,12 @@ class Presentation(Thing):
         else:
             self.mathjax_src = self.mathjax_url_remote
 
-
     def dig(self):
         s = []
         for c in self.children:
             s += ["    %s" % x for x in c.dig()]
         result = [self.header] + [self.html_template[0] % self.getHTMLOptions()] + s + [self.html_template[2]]
         return result
-
 
     def export(self, filename):
         '''
@@ -1290,11 +1298,11 @@ class Presentation(Thing):
         return p
 
 
-
 class Vspace(Thing):
     '''
     Class for vertical space.
     '''
+
     def __init__(self, h="1em", **kwargs):
         '''
         @param h: CSS height of the vertical space.
@@ -1305,12 +1313,12 @@ class Vspace(Thing):
         self.html_template = ["<div%s>", "", "</div>"]
 
 
-
 class FrontPage(Page):
     '''
     Class for the presentation's frontpage.
     @ivar authors: list of author objects.
     '''
+
     def __init__(self, **kwargs):
         Page.__init__(self, **kwargs)
         self.authors = []
@@ -1337,7 +1345,6 @@ class FrontPage(Page):
                         inst.index = counter_inst
                         dict_inst_index[inst.name] = counter_inst
                         counter_inst += 1
-                        print "new inst:", inst.name
                         dict_insts[inst.name] = inst
 
             for inst_name, inst in sorted(dict_insts.items(), key=lambda x:x[1].index):
@@ -1353,6 +1360,7 @@ class FrontPage(Page):
         self.title = title
         h = self.addH2(title).css({"margin-bottom":"2em", "margin-top":"1em"}).cl('title')
         return h
+
     def author(self, name):
         '''
         Add an author to the frontpage.
@@ -1362,10 +1370,10 @@ class FrontPage(Page):
         self.add(author)
         self.authors.append(author)
         return author
+
     def dig(self):
         self.build()
         return Page.dig(self)
-
 
 
 class EndPage(Page):
@@ -1373,6 +1381,7 @@ class EndPage(Page):
     Class for the last page: Thank you, contact info, etc.
     @todo: methods need more careful implementation.
     '''
+
     def __init__(self, **kwargs):
         '''
         Implement to customize the contents.
@@ -1389,17 +1398,16 @@ class EndPage(Page):
             self.h4('navid.dianati@gmail.com').cl('email')
         if self.url_qr:
             self.qr(self.url_qr)
+
     def author(self, name):
         author = Author(name).cl('author')
         self.add(author)
         self.authors.append(author)
         return author
+
     def qr(self, url):
         image = self.im(url).w('30%')
         return image
-
-
-
 
 
 class Author(H4):
@@ -1407,6 +1415,7 @@ class Author(H4):
     Class for an author for the presentation.
     @ivar institutions: list of associated institutions.
     '''
+
     def __init__(self, name='', **kwargs):
         '''
         @param name: name of the author.
@@ -1424,17 +1433,28 @@ class Author(H4):
         inst = Institution(name)
         self.institutions.append(inst)
         return inst
+    
     def dig(self):
         s = ''
         if self.institutions:
             s = "<sup>%s</sup>" % ','.join([str(inst.index) for inst in sorted(self.institutions)])
+            s = "<sup>%s</sup>" % ','.join([str(inst.index) for inst in sorted(self.institutions)])
         self.html += s
         return H4.dig(self)
 
+
+@total_ordering
 class Institution(H4):
     '''
     Class for an institution for the presentation.
     '''
+
+    def __eq__(self, x):
+        return self.name.lower() == x.name.lower()
+
+    def __lt__(self, x):
+        return self.name.lower() < x.name.lower()
+    
     def __init__(self, name='', **kwargs):
         '''
         @param name: name of the institution.
@@ -1442,20 +1462,9 @@ class Institution(H4):
         self.name = name
         H4.__init__(self, name, **kwargs)
         self.index = None
+
     def dig(self):
-        print self.index, self.name
         if self.index:
             self.html = ("<sup>%d</sup>" % self.index) + self.html
         return H4.dig(self)
-
-
-
-
-
-
-
-
-
-if __name__ == "__main__":
-    test()
 

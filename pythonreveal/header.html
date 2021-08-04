@@ -13,8 +13,8 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<link rel="stylesheet" href="css/reveal.css">
-<link rel="stylesheet" href="css/theme/default.css" id="theme">
+<link rel="stylesheet" href="${REVEAL_URL}/css/reveal.css">
+<link rel="stylesheet" href="${REVEAL_URL}/css/theme/default.css" id="theme">
 
 
 <!-- <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900'
@@ -22,7 +22,7 @@
  -->
 
 <!-- For syntax highlighting -->
-<link rel="stylesheet" href="lib/css/zenburn.css">
+<link rel="stylesheet" href="${REVEAL_URL}/lib/css/zenburn.css">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -30,14 +30,14 @@
 		var link = document.createElement('link');
 		link.rel = 'stylesheet';
 		link.type = 'text/css';
-		link.href = 'css/print/pdf.css';
+		link.href = '${REVEAL_URL}/css/print/pdf.css';
 		document.getElementsByTagName('head')[0].appendChild(link);
 	}
 </script>
 
 
 <!-- MathJax script with url placeholder -->
-<script type="text/javascript" src="${mathjax_src}?config=TeX-AMS-MML_SVG"> 
+<script type="text/javascript" src="${MATHJAX_SRC}?config=TeX-AMS-MML_SVG"> 
 </script>
 
 
@@ -56,11 +56,11 @@
 	});
 </script>
 <!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
+		<script src="${REVEAL_URL}/lib/js/html5shiv.js"></script>
 		<![endif]-->
 		
 <!-- This is where the api's theme's style will go -->	
-$inlinestyle
+${INLINE_STYLE}
 		
 	
 </head>

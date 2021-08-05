@@ -60,5 +60,9 @@ page.h2('We need to approximate the graph').cl('h2yellow').fr()
 p.export('minimal_example.html')
 ```
 
+Examples:
+![](/files/screenshots/reveal1.png)
+![](/files/screenshots/reveal2.png)
+![](/files/screenshots/reveal3.png)
  
 For a complete example see `presentation_example.py`.
